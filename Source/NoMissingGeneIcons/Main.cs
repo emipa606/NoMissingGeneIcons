@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using HarmonyLib;
 using RimWorld;
 using UnityEngine;
 using Verse;
@@ -8,7 +9,7 @@ namespace NoMissingGeneIcons;
 [StaticConstructorOnStartup]
 public static class Main
 {
-    private static readonly string[] genePrefixes = { "AddictionResistant", "AddictionImmune", "ChemicalDependency" };
+    private static readonly string[] genePrefixes = ["AddictionResistant", "AddictionImmune", "ChemicalDependency"];
 
     static Main()
     {
@@ -18,6 +19,7 @@ public static class Main
             return;
         }
 
+        var cachedIconField = AccessTools.Field(typeof(GeneDef), "cachedIcon");
         var fixedChemicals = new HashSet<string>();
         foreach (var chemicalDef in DefDatabase<ChemicalDef>.AllDefsListForReading)
         {
@@ -34,7 +36,7 @@ public static class Main
                     continue;
                 }
 
-                currentGeneDef.cachedIcon = generateChemicalIcon(chemicalDef, genePrefix);
+                cachedIconField.SetValue(currentGeneDef, generateChemicalIcon(chemicalDef, genePrefix));
                 fixedChemicals.Add(chemicalDef.LabelCap);
             }
         }

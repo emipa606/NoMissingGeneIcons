@@ -2,7 +2,7 @@
 <ModSyncNinjaData>
   <ID>99332d17-3a6a-4067-8829-b3dd64d64dd8</ID>
   <ModName>No Missing Gene Icons</ModName>
-  <Version>1.4.0</Version>
+  <Version>1.5.0</Version>
   <SaveBreaking>False</SaveBreaking>
   <Host name="Github">
     <Owner>emipa606</Owner>
@@ -12,7 +12,3 @@
     <Branch>master</Branch>
   </Host>
 </ModSyncNinjaData>
-
-
-
-

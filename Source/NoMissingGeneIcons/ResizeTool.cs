@@ -22,7 +22,7 @@ SOFTWARE.
 // Texture2D.ReadPixels - https://docs.unity3d.com/ScriptReference/Texture2D.ReadPixels.html
 // Graphics.Blit - https://docs.unity3d.com/ScriptReference/Graphics.Blit.html
 
-/* This class allows you to resize an image on the GPU. 
+/* This class allows you to resize an image on the GPU.
 Resizing an image from 1024px to 8196px 100 times took this method: 00:00:40.8884790
 Resizing an image from 1024px to 8196px 100 times with Unity.Texture2D.Resize() took: 01:08:08.55
 */
@@ -40,7 +40,7 @@ public static class ResizeTool
         var rt = RenderTexture.GetTemporary(targetX, targetY, 0, RenderTextureFormat.ARGB32,
             RenderTextureReadWrite.Default);
 
-        //set the active RenderTexture to the temporary texture so we can read from it
+        //set the active RenderTexture to the temporary texture, so we can read from it
         RenderTexture.active = rt;
 
         //Copy the texture data on the GPU - this is where the magic happens [(;]
