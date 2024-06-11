@@ -9,7 +9,7 @@ namespace NoMissingGeneIcons;
 [StaticConstructorOnStartup]
 public static class Main
 {
-    private static readonly string[] genePrefixes = ["AddictionResistant", "AddictionImmune", "ChemicalDependency"];
+    private static readonly List<string> genePrefixes = ["AddictionResistant", "AddictionImmune", "ChemicalDependency"];
 
     static Main()
     {
@@ -17,6 +17,11 @@ public static class Main
         {
             LogMessage("Biotech not active, nothing to do.");
             return;
+        }
+
+        if (ModLister.GetActiveModWithIdentifier("RedMattis.GeneExtractor", true) != null)
+        {
+            genePrefixes.Add("GET_RegularAddiction");
         }
 
         var cachedIconField = AccessTools.Field(typeof(GeneDef), "cachedIcon");
@@ -47,7 +52,9 @@ public static class Main
 
     private static Texture2D generateChemicalIcon(ChemicalDef chemicalDef, string genePrefix)
     {
-        var templateImage = ContentFinder<Texture2D>.Get($"GeneTextureTemplates/{genePrefix}");
+        var templateImage = ContentFinder<Texture2D>.Get(genePrefix == "GET_RegularAddiction"
+            ? "UI/Icons/Genes/GeneBackground_Xenogene"
+            : $"GeneTextureTemplates/{genePrefix}");
 
         var firstThingUsingChemical = DefDatabase<ThingDef>.AllDefsListForReading.FirstOrFallback(
             def => def.HasComp(typeof(CompDrug)) &&
