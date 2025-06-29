@@ -7,6 +7,7 @@
   <supportedVersions>
     <li>1.4</li>
     <li>1.5</li>
+    <li>1.6</li>
   </supportedVersions>
   <modDependencies>
     <li>
@@ -32,6 +33,8 @@ Will generate missing icons for ChemicalDefs so they do not get the default "mis
 All added chemicals in the game will generate three genes for drug-addicition and resistance. If the mod does not also add icons for these chemicals they will generate an error the first time they are visible in the game and instead use the default icon for missing texture.
 
 This mod iterates through all chemicals on game-start and for all genes based on that chemical it checks if the icon is missing. If so it generates an icon based on the default gene-icons for drugs overlayed with the icon of the first registered drug in the game that uses the chemical.
+
+Also supports the regular addiction genes added by [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3016454783]Gene Extractor Tiers[/url]
 
 Idea by: DisK
 Template graphics by: Velcroboy 
@@ -62,8 +65,8 @@ Since modding is just a hobby for me I expect no donations to keep modding. If y
 [*] Do not report errors by making a discussion-thread, I get no notification of that.
 [*] If you have the solution for a problem, please post it to the GitHub repository.
 [*] Use [url=https://github.com/RimSort/RimSort/releases/latest]RimSort[/url] to sort your mods
-[/list]
+[/list] 
 
-[url=https://steamcommunity.com/sharedfiles/filedetails/changelog/2890795292][img]https://img.shields.io/github/v/release/emipa606/NoMissingGeneIcons?label=latest%20version&amp;style=plastic&amp;labelColor=0070cd&amp;color=white[/img][/url]</description>
-  <modVersion IgnoreIfNoMatchingField="True">1.5.1</modVersion>
+[url=https://steamcommunity.com/sharedfiles/filedetails/changelog/2890795292][img]https://img.shields.io/github/v/release/emipa606/NoMissingGeneIcons?label=latest%20version&amp;style=plastic&amp;labelColor=0070cd&amp;color=white[/img][/url] | tags: default icons</description>
+  <modVersion IgnoreIfNoMatchingField="True">1.6.0</modVersion>
 </ModMetaData>

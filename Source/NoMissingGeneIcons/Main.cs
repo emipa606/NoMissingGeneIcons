@@ -15,7 +15,7 @@ public static class Main
     {
         if (!ModLister.BiotechInstalled)
         {
-            LogMessage("Biotech not active, nothing to do.");
+            logMessage("Biotech not active, nothing to do.");
             return;
         }
 
@@ -46,7 +46,7 @@ public static class Main
             }
         }
 
-        LogMessage(
+        logMessage(
             $"Fixed missing gene-graphics for {fixedChemicals.Count} ChemicalDefs. \n{string.Join(", ", fixedChemicals)}");
     }
 
@@ -56,14 +56,14 @@ public static class Main
             ? "UI/Icons/Genes/GeneBackground_Xenogene"
             : $"GeneTextureTemplates/{genePrefix}");
 
-        var firstThingUsingChemical = DefDatabase<ThingDef>.AllDefsListForReading.FirstOrFallback(
-            def => def.HasComp(typeof(CompDrug)) &&
-                   def.GetCompProperties<CompProperties_Drug>().chemical == chemicalDef);
+        var firstThingUsingChemical = DefDatabase<ThingDef>.AllDefsListForReading.FirstOrFallback(def =>
+            def.HasComp(typeof(CompDrug)) &&
+            def.GetCompProperties<CompProperties_Drug>().chemical == chemicalDef);
 
         Texture2D thingIcon;
         if (firstThingUsingChemical == null)
         {
-            LogMessage($"Failed to find anything using {chemicalDef.label}, using default icon.");
+            logMessage($"Failed to find anything using {chemicalDef.label}, using default icon.");
             thingIcon = ContentFinder<Texture2D>.Get("GeneTextureTemplates/Generic");
         }
         else
@@ -120,7 +120,7 @@ public static class Main
     }
 
 
-    public static void LogMessage(string message)
+    private static void logMessage(string message)
     {
         Log.Message($"[NoMissingGeneIcons]: {message}");
     }

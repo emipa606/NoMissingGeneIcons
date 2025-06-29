@@ -8,6 +8,8 @@ All added chemicals in the game will generate three genes for drug-addicition an
 
 This mod iterates through all chemicals on game-start and for all genes based on that chemical it checks if the icon is missing. If so it generates an icon based on the default gene-icons for drugs overlayed with the icon of the first registered drug in the game that uses the chemical.
 
+Also supports the regular addiction genes added by [Gene Extractor Tiers](https://steamcommunity.com/sharedfiles/filedetails/?id=3016454783)
+
 Idea by: DisK
 Template graphics by: Velcroboy 
 	
@@ -30,6 +32,6 @@ Since modding is just a hobby for me I expect no donations to keep modding. If y
 -  If you have the solution for a problem, please post it to the GitHub repository.
 -  Use [RimSort](https://github.com/RimSort/RimSort/releases/latest) to sort your mods
 
+ 
 
-
-[![Image](https://img.shields.io/github/v/release/emipa606/NoMissingGeneIcons?label=latest%20version&style=plastic&labelColor=0070cd&color=white)](https://steamcommunity.com/sharedfiles/filedetails/changelog/2890795292)
+[![Image](https://img.shields.io/github/v/release/emipa606/NoMissingGeneIcons?label=latest%20version&style=plastic&labelColor=0070cd&color=white)](https://steamcommunity.com/sharedfiles/filedetails/changelog/2890795292) | tags: default icons

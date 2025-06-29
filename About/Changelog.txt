@@ -1,5 +1,8 @@
 # Changelog for NoMissingGeneIcons
 
+1.6.0 - Mod updated for 1.6 and passed autotests
+
+
 1.5.1 - Added support for the regular addiction genes added by [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3016454783]Gene Extractor Tiers[/url]
 
 
