@@ -58,7 +58,7 @@ public static class ResizeTool
         }
         catch
         {
-            Debug.LogError("Read/Write is not enabled on texture " + texture2D.name);
+            Debug.LogError($"Read/Write is not enabled on texture {texture2D.name}");
         }
 
 

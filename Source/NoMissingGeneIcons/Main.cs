@@ -57,6 +57,7 @@ public static class Main
             : $"GeneTextureTemplates/{genePrefix}");
 
         var firstThingUsingChemical = DefDatabase<ThingDef>.AllDefsListForReading.FirstOrFallback(def =>
+            def != null &&
             def.HasComp(typeof(CompDrug)) &&
             def.GetCompProperties<CompProperties_Drug>().chemical == chemicalDef);
 
